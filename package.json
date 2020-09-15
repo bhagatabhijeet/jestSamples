@@ -19,5 +19,6 @@
   "homepage": "https://github.com/bhagatabhijeet/jestSamples#readme",
   "devDependencies": {
     "jest": "^26.4.2"
-  }
+  },
+  "dependencies": {}
 }
