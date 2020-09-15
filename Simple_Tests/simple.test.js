@@ -1,11 +1,28 @@
 /**
+ * ************************  CHAPTER 1 ************************************************
+ * GETTING STARTED
+ * ************************************************************************************
  * Notes : -  A Test in jest can be called using 'test' function or using its alias 'it'
- 
- * @external https://jestjs.io/docs/en/api#testname-fn-timeout
- */
+ * 
+ * @see https://jestjs.io/docs/en/api#testname-fn-timeout
+ * @author Abhijeet Bhagat
+ * 
+ * NOTE :- if you need to run tests only in this test suite then use following command
+ * ****************************** COMMAND ********************************************
+ * ___________________________________________________________________________________|                                                                                   
+ *               npm test -t Simple_Tests/simple.test.js                              |
+ * ___________________________________________________________________________________|
+ */ 
 
-//using 'test' 
-//test takes 3 parameters namely -name of test, the function to execute for testing and timeout
+
+// USING TEST
+// test() is all that you need to create a JavaScript Test using Jest. 
+//test takes 3 parameters namely
+// -name of test, 
+//the function to execute for testing and 
+//timeout
+
+//FIRST TEST
 
 test('test 2 plus 2 is 4'/*This is name of our test*/,
 ()=>{
