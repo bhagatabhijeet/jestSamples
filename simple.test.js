@@ -10,7 +10,7 @@
  * NOTE :- if you need to run tests only in this test suite then use following command
  * ****************************** COMMAND ********************************************
  * ___________________________________________________________________________________|                                                                                   
- *               npm test -t Simple_Tests/simple.test.js                              |
+ *               npm test -t simple.test.js                              |
  * ___________________________________________________________________________________|
  */ 
 
