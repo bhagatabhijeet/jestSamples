@@ -14,7 +14,6 @@
  *               npm test -t mocks.test.js                                         |
  * ___________________________________________________________________________________|
  */
-const { TestScheduler } = require("jest");
 
  
 
@@ -108,7 +107,86 @@ const { TestScheduler } = require("jest");
     mockCallback2.mockReturnValue("x");
     expect(mockCallback2()).toEqual("x");
   });
+
+
+  /**
+   * There are three main types of module and function mocking in Jest:
+   * I)       jest.fn: Mock a function
+   * II)      jest.mock: Mock a module
+   * III)     jest.spyOn: Spy or mock a function
+   */
     
+   // We have see jest.fn nonetheless let's see it again...say i have a function
+   // which returns the remainder of a/b
+
+   let getModulo = function(a,b){
+        return a%b;
+   } 
+
+   /**
+    * The most basic strategy for mocking is to reassign a function to the Mock Function. 
+    * Then, anywhere the reassigned functions are used, the mock will be called instead of the original func
+    */
+
+    //reassigned getModulo to Mock
+    getModulo = jest.fn();
+    test("call modulo mock", () => {
+        getModulo(1, 2);
+        expect(getModulo).toHaveBeenCalledWith(1, 2);
+      });
+
+
+    /**
+     * This type of mocking is less common for a couple reasons:
+     * jest.mock does this automatically for all functions in a module
+     * jest.spyOn does the same thing but allows restoring the original function
+     * 
+     * use jest.mock to automatically set all exports of a module to the Mock Function. 
+     * So, calling jest.mock('./basicmath.js'); essentially will create mocks for all the exports
+     * see the example below
+     */
+    
+     const m = require("./lib/basicmath");
+     // Set all module functions to jest.fn
+    jest.mock("./lib/basicmath");
+
+    test("call multiply mock",()=>{
+        m.multiply(3,4);
+        expect(m.multiply).toHaveBeenCalledWith(3,4);
+    });
+
+
+    //Spy or mock a function with jest.spyOn
+    /**
+     * Sometimes you only want to watch a method be called, 
+     * but keep the original implementation. 
+     * Other times you may want to mock the implementation, but restore the original later in the suite.
+     * In these cases, you can use jest.spyOn.
+     */
+    //let say we have a function which uses console.log
+
+    function myConsoleLog(msg){
+       console.log(msg);
+    }
+
+    test("spying on console.log", () => {
+        const con=jest.spyOn(console,'log');
+        myConsoleLog('Hello');
+        expect(con).toHaveBeenCalledWith('Hello');
+    });
+
+    // you may want to mock a function, but then restore the original implementation 
+
+    test("spying on console.log and then restoring", () => {
+        const con=jest.spyOn(console,'log');
+        con.mockImplementation(()=>'i am being returned from console.logs mock');
+
+        myConsoleLog('Hello');
+        expect(con()).toBe('i am being returned from console.logs mock');
+    });
+
+    //The key thing to remember about jest.spyOn is that it is just sugar for the basic jest.fn() usage.
+
     /**
     ******************************** Quiz ***************************************************
     * 1. how is 'done' used when dealing with the async functions that take a callback?
@@ -117,7 +195,6 @@ const { TestScheduler } = require("jest");
     
     /**
     * next go to
-    * @see https://github.com/bhagatabhijeet/jestSamples/blob/master/mocks.test.js 
-    * @see mocks.test.js
+    * 
     */
     
