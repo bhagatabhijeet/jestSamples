@@ -10,7 +10,7 @@
  * NOTE :- if you need to run tests only in this test suite then use following command
  * ****************************** COMMAND ********************************************
  * ___________________________________________________________________________________|                                                                                   
- *               npm test -t simple.test.js                              |
+ *               npm test -t simple.test.js                                           |
  * ___________________________________________________________________________________|
  */ 
 
@@ -72,4 +72,8 @@ test("object value equality",() =>{
  * 3. you learned 2 matchers in this script name them.
  */
 
-// NEXT GO TO 
+/**
+ * next go to
+ * @see https://github.com/bhagatabhijeet/jestSamples/blob/master/opposite.test.js 
+ * @see opposite.test.js
+ */
