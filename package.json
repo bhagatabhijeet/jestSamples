@@ -1,0 +1,23 @@
+{
+  "name": "jestSamples",
+  "version": "1.0.0",
+  "description": "A sample project and tutorial for Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhagatabhijeet/jestSamples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhagatabhijeet/jestSamples/issues"
+  },
+  "homepage": "https://github.com/bhagatabhijeet/jestSamples#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
