@@ -2,6 +2,11 @@
 A sample project and tutorial for Jest
 
 [![codecov](https://codecov.io/gh/bhagatabhijeet/jestSamples/branch/master/graph/badge.svg)](https://codecov.io/gh/bhagatabhijeet/jestSamples)
+[![GitHub forks](https://img.shields.io/github/forks/bhagatabhijeet/jestSamples?style=plastic)](https://github.com/bhagatabhijeet/jestSamples/network)
+[![GitHub stars](https://img.shields.io/github/stars/bhagatabhijeet/jestSamples?style=plastic)](https://github.com/bhagatabhijeet/jestSamples/stargazers)
+[![GitHub license](https://img.shields.io/github/license/bhagatabhijeet/jestSamples?style=plastic)](https://github.com/bhagatabhijeet/jestSamples/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/Love-%F0%9F%92%99-blue)](https://github.com/bhagatabhijeet/jestSamples)
+
 
 [Begin Here -> Simple Tests](simple.test.js)
 
